@@ -175,6 +175,12 @@ img { display: block; max-width: 100%; }
 .founder__role { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.2rem; }
 .founder__divider { width: 40px; height: 1px; background: var(--cream-dark); margin-bottom: 1.2rem; }
 .founder__bio { font-size: 0.9rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem; }
+.founders__grid--two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+.founder-card { }
+.founder-card__photo-wrap { border-top: 3px solid var(--amber); overflow: hidden; margin-bottom: 1.75rem; }
+.founder-card__photo-wrap img { width: 100%; height: 400px; object-fit: cover; object-position: center top; display: block; }
+.founder-card__body { }
+@media (max-width: 700px) { .founders__grid--two { grid-template-columns: 1fr; gap: 2.5rem; } }
 .founders__stats-bar { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--cream-dark); margin-top: 4rem; }
 .founders__stat { background: var(--cream); padding: 1.75rem 1.5rem; text-align: center; }
 .founders__stat-num { font-family: var(--heading); font-size: 1.9rem; font-weight: 400; color: var(--green); }
@@ -228,13 +234,25 @@ img { display: block; max-width: 100%; }
   .call__steps { grid-template-columns: 1fr; }
   .dd__grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .founders__grid { grid-template-columns: 1fr; gap: 3rem; }
-  .founders__stats-bar { grid-template-columns: repeat(2,1fr); }
+  .founders__grid--two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+.founder-card { }
+.founder-card__photo-wrap { border-top: 3px solid var(--amber); overflow: hidden; margin-bottom: 1.75rem; }
+.founder-card__photo-wrap img { width: 100%; height: 400px; object-fit: cover; object-position: center top; display: block; }
+.founder-card__body { }
+@media (max-width: 700px) { .founders__grid--two { grid-template-columns: 1fr; gap: 2.5rem; } }
+.founders__stats-bar { grid-template-columns: repeat(2,1fr); }
   .form-section__inner { grid-template-columns: 1fr; gap: 3rem; }
   .footer__bottom { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 600px) {
   .stats__inner { grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
-  .founders__stats-bar { grid-template-columns: repeat(2,1fr); }
+  .founders__grid--two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+.founder-card { }
+.founder-card__photo-wrap { border-top: 3px solid var(--amber); overflow: hidden; margin-bottom: 1.75rem; }
+.founder-card__photo-wrap img { width: 100%; height: 400px; object-fit: cover; object-position: center top; display: block; }
+.founder-card__body { }
+@media (max-width: 700px) { .founders__grid--two { grid-template-columns: 1fr; gap: 2.5rem; } }
+.founders__stats-bar { grid-template-columns: repeat(2,1fr); }
   .nav { padding: 1rem 1.25rem; }
   .hero__trust { flex-wrap: wrap; gap: 1.25rem; }
 }
@@ -434,18 +452,23 @@ img { display: block; max-width: 100%; }
       <span class="eyebrow">Who You Will Be Speaking With</span>
       <h2 class="section__h2">Your advisors on the ground in Cyprus</h2>
     </div>
-    <div class="founders__grid">
-      <div class="founders__photo-wrap">
-        <img src="./founders-lp.jpg" alt="Karolina Lewinska &amp; Sebastian Bruski — NIRON Invest Group" />
-      </div>
-      <div class="founders__text">
-        <div style="margin-bottom:2.5rem">
+    <div class="founders__grid founders__grid--two">
+      <div class="founder-card">
+        <div class="founder-card__photo-wrap">
+          <img src="./karolina-lp.jpg" alt="Karolina Lewinska — NIRON Invest Group" />
+        </div>
+        <div class="founder-card__body">
           <h3 class="founder__name">Karolina Lewinska</h3>
           <p class="founder__role">Co-Founder &amp; Advisory Director</p>
           <div class="founder__divider"></div>
           <p class="founder__bio">Living and working permanently in Paphos, Cyprus since 2022. Karolina brings a Family Office approach to international property acquisition — combining meticulous legal due diligence with a deep understanding of the personal and financial objectives of high-net-worth buyers. She conducts all initial strategy calls personally.</p>
         </div>
-        <div>
+      </div>
+      <div class="founder-card">
+        <div class="founder-card__photo-wrap">
+          <img src="./sebastian-lp.jpg" alt="Sebastian Bruski — NIRON Invest Group" />
+        </div>
+        <div class="founder-card__body">
           <h3 class="founder__name">Sebastian Bruski</h3>
           <p class="founder__role">Co-Founder &amp; Investment Director</p>
           <div class="founder__divider"></div>
