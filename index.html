@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cyprus Property & Residency Advisory | NIRON Invest Group</title>
+<meta name="description" content="A focused 30-minute private consultation with on-the-ground advisors living in Cyprus since 2022. €68M+ in vetted transactions. Independent buyer advisory." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green: #01464E;
+    --green-dark: #013239;
+    --green-mid: #025a65;
+    --amber: #F0A030;
+    --amber-light: #f5b455;
+    --cream: #FAF7F2;
+    --cream-dark: #F2EDE4;
+    --text: #1a1a1a;
+    --text-muted: #5a5a5a;
+    --heading: 'Cormorant Garamond', Georgia, serif;
+    --body: 'Jost', system-ui, sans-serif;
+    --max: 1140px;
+    --radius: 2px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--body); color: var(--text); background: #fff; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  /* ── UTILITIES ── */
+  .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+  .label { font-family: var(--body); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); }
+  .section { padding: 6rem 0; }
+  .section--dark { background: var(--green-dark); color: #e8e0d4; }
+  .section--cream { background: var(--cream); }
+  .section--mid { background: var(--green); color: #e8e0d4; }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  /* ── NAV ── */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.25rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(1,50,57,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(240,160,48,0.15);
+  }
+  .nav__logo { font-family: var(--heading); font-size: 1.5rem; font-weight: 600; letter-spacing: 0.15em; color: var(--amber); text-decoration: none; }
+  .nav__cta {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.6rem 1.5rem;
+    background: var(--amber); color: #fff;
+    font-family: var(--body); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .nav__cta:hover { background: var(--amber-light); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #013239 0%, #01464E 40%, #025a65 70%, #013239 100%);
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding-top: 5rem;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80') center/cover no-repeat;
+    opacity: 0.12;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(1,50,57,0.9) 50%, rgba(1,50,57,0.5) 100%);
+  }
+  .hero__inner {
+    position: relative; z-index: 1;
+    max-width: var(--max); margin: 0 auto; padding: 4rem 2rem;
+    display: grid; grid-template-columns: 1fr 420px; gap: 4rem; align-items: center;
+  }
+  .hero__content { color: #fff; }
+  .hero__pre { color: var(--amber); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; margin-bottom: 1.5rem; }
+  .hero__h1 { font-family: var(--heading); font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 500; line-height: 1.15; color: #fff; margin-bottom: 1.5rem; }
+  .hero__h1 em { font-style: italic; color: var(--amber); }
+  .hero__sub { font-size: 1rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 2.5rem; max-width: 520px; }
+  .hero__proof { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.5rem; }
+  .hero__proof-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.75); }
+  .hero__proof-dot { width: 6px; height: 6px; background: var(--amber); border-radius: 50%; flex-shrink: 0; }
+  .hero__cta {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    padding: 1rem 2.25rem;
+    background: var(--amber); color: #fff;
+    font-family: var(--body); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer; border: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .hero__cta:hover { background: var(--amber-light); transform: translateY(-1px); }
+  .hero__cta-arrow { font-size: 1rem; }
+
+  /* Hero mini-form card */
+  .hero__card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(240,160,48,0.25);
+    padding: 2.5rem;
+    backdrop-filter: blur(8px);
+  }
+  .hero__card-title { font-family: var(--heading); font-size: 1.4rem; color: #fff; margin-bottom: 0.5rem; }
+  .hero__card-sub { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-bottom: 1.75rem; line-height: 1.5; }
+  .form-field { margin-bottom: 1rem; }
+  .form-field label { display: block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.4rem; }
+  .form-field input, .form-field select {
+    width: 100%; padding: 0.75rem 1rem;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
+    color: #fff; font-family: var(--body); font-size: 0.9rem;
+    outline: none; transition: border-color 0.2s;
+    -webkit-appearance: none; appearance: none;
+  }
+  .form-field input::placeholder { color: rgba(255,255,255,0.35); }
+  .form-field select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23F0A030' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+  .form-field select option { background: var(--green-dark); color: #fff; }
+  .form-field input:focus, .form-field select:focus { border-color: var(--amber); }
+  .form-submit {
+    width: 100%; padding: 0.9rem;
+    background: var(--amber); color: #fff;
+    font-family: var(--body); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    border: none; cursor: pointer; transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+  .form-submit:hover { background: var(--amber-light); }
+  .form-micro { font-size: 0.7rem; color: rgba(255,255,255,0.4); text-align: center; margin-top: 0.75rem; line-height: 1.5; }
+
+  /* ── STATS BAR ── */
+  .stats { background: var(--amber); padding: 1.5rem 0; }
+  .stats__inner { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+  .stat { text-align: center; }
+  .stat__num { font-family: var(--heading); font-size: 1.8rem; font-weight: 600; color: #fff; line-height: 1; }
+  .stat__label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-top: 0.25rem; }
+
+  /* ── TRACKS ── */
+  .tracks__intro { text-align: center; margin-bottom: 3.5rem; }
+  .tracks__h2 { font-family: var(--heading); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; color: var(--green-dark); margin-top: 0.75rem; line-height: 1.2; }
+  .tracks__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .track {
+    border: 1px solid #e0d8cc;
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .track:hover { border-color: var(--amber); box-shadow: 0 4px 24px rgba(1,70,78,0.08); }
+  .track__num { font-family: var(--heading); font-size: 3rem; font-weight: 600; color: var(--cream-dark); line-height: 1; margin-bottom: 1rem; }
+  .track__title { font-family: var(--heading); font-size: 1.25rem; font-weight: 500; color: var(--green-dark); margin-bottom: 1rem; line-height: 1.3; }
+  .track__body { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+  .track__tag { display: inline-block; margin-top: 1.25rem; padding: 0.3rem 0.75rem; background: var(--cream); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); }
+
+  /* ── WHAT HAPPENS ── */
+  .call__intro { text-align: center; margin-bottom: 3.5rem; }
+  .call__h2 { font-family: var(--heading); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; color: #fff; margin-top: 0.75rem; line-height: 1.2; }
+  .call__sub { font-size: 0.95rem; color: rgba(232,224,212,0.7); margin-top: 0.75rem; }
+  .call__steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .call__step { display: flex; gap: 1.5rem; align-items: flex-start; }
+  .call__step-num {
+    flex-shrink: 0; width: 44px; height: 44px;
+    border: 1px solid var(--amber); color: var(--amber);
+    font-family: var(--heading); font-size: 1.1rem; font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .call__step-title { font-family: var(--heading); font-size: 1.15rem; font-weight: 500; color: #fff; margin-bottom: 0.5rem; }
+  .call__step-body { font-size: 0.87rem; color: rgba(232,224,212,0.7); line-height: 1.7; }
+  .call__verdict { margin-top: 3rem; padding: 2rem 2.5rem; border-left: 3px solid var(--amber); background: rgba(240,160,48,0.06); }
+  .call__verdict-text { font-family: var(--heading); font-size: 1.1rem; font-style: italic; color: rgba(232,224,212,0.9); line-height: 1.6; }
+
+  /* ── DUE DILIGENCE ── */
+  .dd__intro { margin-bottom: 3.5rem; }
+  .dd__h2 { font-family: var(--heading); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; color: var(--green-dark); margin-top: 0.75rem; line-height: 1.2; max-width: 600px; }
+  .dd__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .dd__pillar { padding: 2.5rem 2rem; background: var(--cream); position: relative; }
+  .dd__pillar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--amber); }
+  .dd__pillar-title { font-family: var(--heading); font-size: 1.15rem; font-weight: 500; color: var(--green-dark); margin-bottom: 1rem; line-height: 1.3; }
+  .dd__pillar-body { font-size: 0.87rem; color: var(--text-muted); line-height: 1.75; }
+
+  /* ── FOUNDERS ── */
+  .founders__intro { text-align: center; margin-bottom: 3.5rem; }
+  .founders__h2 { font-family: var(--heading); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; color: #fff; margin-top: 0.75rem; line-height: 1.2; }
+  .founders__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .founder { display: grid; grid-template-columns: 200px 1fr; gap: 2rem; align-items: start; }
+  .founder__photo {
+    aspect-ratio: 3/4;
+    background: var(--green-mid);
+    position: relative; overflow: hidden;
+  }
+  .founder__photo-placeholder {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--heading); font-size: 3rem; color: rgba(255,255,255,0.15);
+  }
+  .founder__name { font-family: var(--heading); font-size: 1.5rem; font-weight: 500; color: #fff; margin-bottom: 0.25rem; }
+  .founder__role { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; }
+  .founder__bio { font-size: 0.87rem; color: rgba(232,224,212,0.7); line-height: 1.75; }
+  .founders__stats { display: flex; gap: 2rem; margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid rgba(255,255,255,0.1); justify-content: center; flex-wrap: wrap; }
+  .founders__stat { text-align: center; }
+  .founders__stat-num { font-family: var(--heading); font-size: 2.4rem; font-weight: 500; color: var(--amber); }
+  .founders__stat-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(232,224,212,0.6); margin-top: 0.25rem; }
+
+  /* ── FORM SECTION ── */
+  .form-section__inner { display: grid; grid-template-columns: 1fr 500px; gap: 5rem; align-items: start; }
+  .form-section__left {}
+  .form-section__h2 { font-family: var(--heading); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 500; color: var(--green-dark); margin-top: 0.75rem; line-height: 1.2; margin-bottom: 1.5rem; }
+  .form-section__body { font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 2rem; }
+  .form-section__checklist { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .form-section__checklist li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.87rem; color: var(--text-muted); }
+  .form-section__checklist li::before { content: ''; width: 18px; height: 18px; border: 1px solid var(--amber); flex-shrink: 0; margin-top: 2px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4 9l3.5 3.5L14 6' stroke='%23F0A030' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") center/contain no-repeat; }
+  .form-card {
+    background: var(--green-dark);
+    padding: 3rem;
+  }
+  .form-card__title { font-family: var(--heading); font-size: 1.6rem; font-weight: 500; color: #fff; margin-bottom: 0.5rem; }
+  .form-card__sub { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 2rem; line-height: 1.5; }
+
+  /* Success state */
+  .form-success { display: none; text-align: center; padding: 2rem 0; }
+  .form-success__icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .form-success__title { font-family: var(--heading); font-size: 1.6rem; color: #fff; margin-bottom: 0.75rem; }
+  .form-success__body { font-size: 0.87rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+  /* ── FAQ ── */
+  .faq__h2 { font-family: var(--heading); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 500; color: var(--green-dark); margin-top: 0.75rem; margin-bottom: 3rem; line-height: 1.2; }
+  .faq__list { display: flex; flex-direction: column; gap: 0; }
+  .faq__item { border-bottom: 1px solid #e0d8cc; }
+  .faq__item:first-of-type { border-top: 1px solid #e0d8cc; }
+  .faq__q {
+    width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+    padding: 1.5rem 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    font-family: var(--heading); font-size: 1.1rem; font-weight: 500; color: var(--green-dark);
+    line-height: 1.4;
+  }
+  .faq__q:hover { color: var(--green); }
+  .faq__icon { flex-shrink: 0; width: 24px; height: 24px; border: 1px solid currentColor; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s; font-size: 0.9rem; font-family: var(--body); font-weight: 300; color: var(--amber); border-color: var(--amber); }
+  .faq__item.open .faq__icon { transform: rotate(45deg); }
+  .faq__a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .faq__a-inner { padding: 0 0 1.5rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.8; max-width: 780px; }
+
+  /* ── FOOTER ── */
+  .footer { background: var(--green-dark); color: rgba(232,224,212,0.6); padding: 3rem 0; }
+  .footer__inner { display: flex; flex-direction: column; gap: 1.5rem; }
+  .footer__logo { font-family: var(--heading); font-size: 1.4rem; font-weight: 600; letter-spacing: 0.12em; color: var(--amber); }
+  .footer__disclaimer { font-size: 0.75rem; line-height: 1.8; max-width: 820px; color: rgba(232,224,212,0.4); }
+  .footer__bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.07); font-size: 0.75rem; }
+  .footer__links { display: flex; gap: 1.5rem; }
+  .footer__links a { color: rgba(232,224,212,0.5); text-decoration: none; }
+  .footer__links a:hover { color: #fff; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .hero__inner { grid-template-columns: 1fr; }
+    .hero__card { display: none; }
+    .tracks__grid { grid-template-columns: 1fr; }
+    .call__steps { grid-template-columns: 1fr; }
+    .dd__grid { grid-template-columns: 1fr; }
+    .founders__grid { grid-template-columns: 1fr; }
+    .founder { grid-template-columns: 160px 1fr; }
+    .form-section__inner { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .section { padding: 4rem 0; }
+    .stats__inner { gap: 2rem; }
+    .founder { grid-template-columns: 1fr; }
+    .founder__photo { max-width: 200px; }
+    .form-card { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="/" class="nav__logo">NIRON</a>
+  <a href="#consultation" class="nav__cta">Book Your Strategy Call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__content">
+      <p class="hero__pre">Independent Buyer Advisory · Cyprus Property &amp; Residency</p>
+      <h1 class="hero__h1">You're exploring Cyprus property.<br /><em>Let's determine if it actually aligns<br />with your wealth strategy.</em></h1>
+      <p class="hero__sub">A focused, 30–minute private consultation with Karolina Lewinska or Sebastian Bruski — on–the–ground advisors living in Paphos since 2022, backed by €68M+ in vetted transactions.</p>
+      <div class="hero__proof">
+        <span class="hero__proof-item"><span class="hero__proof-dot"></span>Zero Sales Pressure</span>
+        <span class="hero__proof-item"><span class="hero__proof-dot"></span>International Investment Specialists</span>
+        <span class="hero__proof-item"><span class="hero__proof-dot"></span>Independent Legal &amp; Developer Due Diligence</span>
+      </div>
+      <a href="#consultation" class="hero__cta">Book Your 30–Minute Strategy Call <span class="hero__cta-arrow">→</span></a>
+    </div>
+    <div class="hero__card">
+      <p class="hero__card-title">Request Your Consultation</p>
+      <p class="hero__card-sub">Strictly confidential. A direct call with an experienced partner in Cyprus.</p>
+      <form id="hero-form" onsubmit="submitForm(event, 'hero-form')">
+        <div class="form-field">
+          <label for="h-name">Full Name</label>
+          <input type="text" id="h-name" name="name" placeholder="Your full name" required />
+        </div>
+        <div class="form-field">
+          <label for="h-phone">Direct Phone Number (UK +44)</label>
+          <input type="tel" id="h-phone" name="phone" placeholder="+44 7xxx xxxxxx" required />
+        </div>
+        <div class="form-field">
+          <label for="h-goal">Primary Objective</label>
+          <select id="h-goal" name="goal" required>
+            <option value="" disabled selected>Select your objective</option>
+            <option>Tax Relocation &amp; Permanent Residency</option>
+            <option>Holiday Home / Second Residence</option>
+            <option>Pure Capital Diversification &amp; Investment</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="h-budget">Allocated Capital Budget</label>
+          <select id="h-budget" name="budget" required>
+            <option value="" disabled selected>Select your budget range</option>
+            <option>£250,000 – £450,000</option>
+            <option>£450,000 – £850,000</option>
+            <option>£850,000+</option>
+          </select>
+        </div>
+        <button type="submit" class="form-submit">Schedule My 30–Minute Call</button>
+        <p class="form-micro">Strictly confidential. No automated robocalls. A direct consultation with an experienced partner in Cyprus.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats">
+  <div class="stats__inner">
+    <div class="stat"><div class="stat__num">€68M+</div><div class="stat__label">Capital Placed</div></div>
+    <div class="stat"><div class="stat__num">270+</div><div class="stat__label">Completed Transactions</div></div>
+    <div class="stat"><div class="stat__num">Since 2017</div><div class="stat__label">Operating in Cyprus</div></div>
+    <div class="stat"><div class="stat__num">3 Markets</div><div class="stat__label">Cyprus · Zanzibar · Cambodia</div></div>
+  </div>
+</div>
+
+<!-- TRACKS -->
+<section class="section">
+  <div class="container">
+    <div class="tracks__intro">
+      <p class="label">Your Situation</p>
+      <h2 class="tracks__h2">Three distinct paths.<br />One trusted advisory partner.</h2>
+    </div>
+    <div class="tracks__grid">
+      <div class="track">
+        <div class="track__num">01</div>
+        <h3 class="track__title">Relocation &amp; Tax Structuring</h3>
+        <p class="track__body">You are exploring an exit from the UK tax net post–April 2025 Non–Dom reforms, seeking Cyprus's 17–year Non–Dom regime (0% tax on worldwide dividends &amp; interest) and fast–track permanent residency.</p>
+        <span class="track__tag">Non-Dom · Residency · Tax</span>
+      </div>
+      <div class="track">
+        <div class="track__num">02</div>
+        <h3 class="track__title">A Protected Second Home</h3>
+        <p class="track__body">You want a high–end Mediterranean residence for lifestyle and family, requiring full legal navigation through post–Brexit acquisition permits (Council of Ministers) and title deed security.</p>
+        <span class="track__tag">Second Residence · Lifestyle</span>
+      </div>
+      <div class="track">
+        <div class="track__num">03</div>
+        <h3 class="track__title">Capital Diversification</h3>
+        <p class="track__body">You want to shift liquid capital into tangible, euro–denominated real estate assets with clear downside protection, verified build quality, and capital growth potential.</p>
+        <span class="track__tag">Wealth Preservation · Euro Assets</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT HAPPENS ON THE CALL -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="call__intro">
+      <p class="label">The 30-Minute Call</p>
+      <h2 class="call__h2">A Strategic Assessment,<br />Not a Sales Pitch.</h2>
+      <p class="call__sub">British buyers are wary of high-pressure calls. Here is exactly what happens during yours.</p>
+    </div>
+    <div class="call__steps">
+      <div class="call__step">
+        <div class="call__step-num">1</div>
+        <div>
+          <h3 class="call__step-title">Criteria Assessment</h3>
+          <p class="call__step-body">We walk through 5 essential questions to thoroughly understand your primary objective, timeline, and capital allocation strategy.</p>
+        </div>
+      </div>
+      <div class="call__step">
+        <div class="call__step-num">2</div>
+        <div>
+          <h3 class="call__step-title">Legal &amp; Tax Reality Check</h3>
+          <p class="call__step-body">A clear, practical assessment of your specific position – including permanent residency criteria, non–EU acquisition permits, and transactional tax considerations.</p>
+        </div>
+      </div>
+      <div class="call__step">
+        <div class="call__step-num">3</div>
+        <div>
+          <h3 class="call__step-title">Market Clarity</h3>
+          <p class="call__step-body">An objective overview of regional dynamics across Paphos, Limassol, and Larnaca, filtering out high–risk developments and unverified builders.</p>
+        </div>
+      </div>
+      <div class="call__step">
+        <div class="call__step-num">4</div>
+        <div>
+          <h3 class="call__step-title">Clear Verdict</h3>
+          <p class="call__step-body">If acquiring property or establishing residency in Cyprus does not make strategic or financial sense for your circumstances, we will tell you directly within the first 15 minutes.</p>
+        </div>
+      </div>
+    </div>
+    <div class="call__verdict">
+      <p class="call__verdict-text">"We only introduce vetted opportunities once your criteria and safety parameters have been fully defined. The consultation is 100% complimentary, completely confidential, and non–transactional."</p>
+    </div>
+  </div>
+</section>
+
+<!-- DUE DILIGENCE -->
+<section class="section">
+  <div class="container">
+    <div class="dd__intro">
+      <p class="label">Our Standard</p>
+      <h2 class="dd__h2">Why British Buyers Choose an On–the–Ground Partner</h2>
+    </div>
+    <div class="dd__grid">
+      <div class="dd__pillar">
+        <h3 class="dd__pillar-title">We Reject More Projects Than We Accept</h3>
+        <p class="dd__pillar-body">We are not an open listing directory or a property aggregator. Every development we review undergoes strict due diligence – including independent Land Registry searches, planning and building permit verification, and developer financial health checks conducted alongside trusted local legal counsel (LawLLT).</p>
+      </div>
+      <div class="dd__pillar">
+        <h3 class="dd__pillar-title">Physical Presence on the Ground</h3>
+        <p class="dd__pillar-body">We live and work permanently in Cyprus. We are not London–based intermediaries relying on developer sales decks. We inspect construction quality on site, assess micro–locations first–hand, and monitor local market shifts every day.</p>
+      </div>
+      <div class="dd__pillar">
+        <h3 class="dd__pillar-title">End–to–End Asset Execution</h3>
+        <p class="dd__pillar-body">Our role does not end at exchange of contracts. We coordinate transactions executed via Power of Attorney (POA), carry out thorough technical handovers on your behalf, and oversee post–completion logistics so you never have to navigate the local bureaucracy alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDERS -->
+<section class="section section--mid">
+  <div class="container">
+    <div class="founders__intro">
+      <p class="label">Who You Will Be Speaking With</p>
+      <h2 class="founders__h2">Your advisors on the ground in Cyprus</h2>
+    </div>
+    <div class="founders__grid">
+      <div class="founder">
+        <div class="founder__photo">
+          <div class="founder__photo-placeholder">KL</div>
+        </div>
+        <div>
+          <h3 class="founder__name">Karolina Lewinska</h3>
+          <p class="founder__role">Co-Founder &amp; Advisory Director</p>
+          <p class="founder__bio">Living and working permanently in Paphos, Cyprus since 2022. Karolina brings a Family Office approach to international property acquisition – combining meticulous legal due diligence with a deep understanding of the personal and financial objectives of high-net-worth buyers. She conducts all initial strategy calls personally, ensuring every conversation is substantive and genuinely tailored to your circumstances.</p>
+        </div>
+      </div>
+      <div class="founder">
+        <div class="founder__photo">
+          <div class="founder__photo-placeholder">SB</div>
+        </div>
+        <div>
+          <h3 class="founder__name">Sebastian Bruski</h3>
+          <p class="founder__role">Co-Founder &amp; Investment Director</p>
+          <p class="founder__bio">With operational roots in Cyprus since 2017 and permanent residency established in 2022, Sebastian oversees transaction structuring, developer vetting, and capital deployment strategy. His background in business development and international investment means he approaches every acquisition from the perspective of risk-adjusted return and long-term capital preservation.</p>
+        </div>
+      </div>
+    </div>
+    <div class="founders__stats">
+      <div class="founders__stat"><div class="founders__stat-num">€68M+</div><div class="founders__stat-label">Transaction Volume</div></div>
+      <div class="founders__stat"><div class="founders__stat-num">270+</div><div class="founders__stat-label">Successful Transactions</div></div>
+      <div class="founders__stat"><div class="founders__stat-num">Since 2017</div><div class="founders__stat-label">Operating on the Ground</div></div>
+      <div class="founders__stat"><div class="founders__stat-num">Family Office</div><div class="founders__stat-label">Standards Applied</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="section section--cream" id="consultation">
+  <div class="container">
+    <div class="form-section__inner">
+      <div class="form-section__left">
+        <p class="label">Book Your Consultation</p>
+        <h2 class="form-section__h2">Request Your Confidential 30–Minute Cyprus Consultation</h2>
+        <p class="form-section__body">Complete the form and one of our advisors will contact you within 24 hours to arrange a time that suits your schedule. We gladly accommodate UK afternoon and weekend availability.</p>
+        <ul class="form-section__checklist">
+          <li>Complimentary and completely non-transactional</li>
+          <li>Conducted directly by Karolina or Sebastian — no junior sales staff</li>
+          <li>Tailored to your specific legal, tax, and capital position</li>
+          <li>No property listings or sales pitches during the initial call</li>
+          <li>UK-friendly scheduling — evenings and weekends available</li>
+        </ul>
+      </div>
+      <div class="form-card">
+        <h3 class="form-card__title">Schedule My 30–Minute Call</h3>
+        <p class="form-card__sub">Strictly confidential · No automated robocalls · Direct consultation with an experienced partner in Cyprus</p>
+        <form id="main-form" onsubmit="submitForm(event, 'main-form')">
+          <div class="form-field">
+            <label for="m-name">Full Name</label>
+            <input type="text" id="m-name" name="name" placeholder="Your full name" required />
+          </div>
+          <div class="form-field">
+            <label for="m-phone">Direct Phone Number (UK +44)</label>
+            <input type="tel" id="m-phone" name="phone" placeholder="+44 7xxx xxxxxx" required />
+          </div>
+          <div class="form-field">
+            <label for="m-goal">Primary Objective</label>
+            <select id="m-goal" name="goal" required>
+              <option value="" disabled selected>Select your objective</option>
+              <option>Tax Relocation &amp; Permanent Residency</option>
+              <option>Holiday Home / Second Residence</option>
+              <option>Pure Capital Diversification &amp; Investment</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="m-budget">Allocated Capital Budget</label>
+            <select id="m-budget" name="budget" required>
+              <option value="" disabled selected>Select your budget range</option>
+              <option>£250,000 – £450,000</option>
+              <option>£450,000 – £850,000</option>
+              <option>£850,000+</option>
+            </select>
+          </div>
+          <button type="submit" class="form-submit">Schedule My 30–Minute Call →</button>
+          <p class="form-micro">By submitting this form you consent to NIRON Invest Group contacting you by phone. Your details will never be shared with third parties.</p>
+        </form>
+        <div class="form-success" id="main-success">
+          <div class="form-success__icon">✓</div>
+          <h3 class="form-success__title">Consultation Request Confirmed</h3>
+          <p class="form-success__body">Thank you. Your details have been securely passed to our advisory team in Cyprus. One of our advisors will contact you within 24 hours to arrange your call at a time that suits you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <p class="label">Common Questions</p>
+    <h2 class="faq__h2">Frequently Asked Questions</h2>
+    <div class="faq__list">
+
+      <div class="faq__item">
+        <button class="faq__q" onclick="toggleFaq(this)">
+          Can UK citizens still buy property in Cyprus after Brexit?
+          <span class="faq__icon">+</span>
+        </button>
+        <div class="faq__a">
+          <p class="faq__a-inner">Yes. Following the UK's departure from the EU, British nationals are classified as non–EU (Third–Country) buyers, which requires an administrative permit from the Council of Ministers. This is a standard procedural step for bona fide buyers and does not prevent you from acquiring registered freehold ownership. Your contract of sale is deposited directly with the District Lands Office immediately upon signing, granting legal protection and equitable ownership rights while the formal permit is processed.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" onclick="toggleFaq(this)">
+          Do I need to fly to Cyprus to start the process?
+          <span class="faq__icon">+</span>
+        </button>
+        <div class="faq__a">
+          <p class="faq__a-inner">No. The entire legal verification and purchase process can be carried out remotely. Through a dedicated Power of Attorney (POA) granted to independent local legal counsel, your lawyer can review contracts, register documents with the Land Registry, open local bank accounts, and handle residency filings on your behalf. While an on–site private inspection trip is always encouraged before taking handover, you can secure and execute your transaction entirely from the UK.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" onclick="toggleFaq(this)">
+          Is this call really free, and will you push specific developments?
+          <span class="faq__icon">+</span>
+        </button>
+        <div class="faq__a">
+          <p class="faq__a-inner">The consultation is 100% complimentary, completely confidential, and non–transactional. We do not operate as high–pressure sales brokers, and we do not pitch property listings during this initial discussion. Our purpose is to evaluate your objectives, clarify the legal and tax landscape, and establish whether Cyprus genuinely fits your plans. We only introduce vetted opportunities once your criteria and safety parameters have been fully defined.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" onclick="toggleFaq(this)">
+          What are the minimum capital requirements for Cyprus Permanent Residency?
+          <span class="faq__icon">+</span>
+        </button>
+        <div class="faq__a">
+          <p class="faq__a-inner">Under the fast–track Permanent Residency route (Regulation 6(2)), non–EU investors must purchase a brand–new residential property with a minimum value of €300,000 (+ applicable VAT) directly from a developer, using funds transferred entirely from abroad. Additionally, the main applicant must demonstrate a verified overseas annual income of at least €50,000 (plus €15,000 for a spouse and €10,000 for each dependent child). This grants permanent residency for life without requiring continuous physical presence – a single visit every two years is sufficient to maintain status.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__logo">NIRON</div>
+      <p class="footer__disclaimer">
+        Niron Invest Group provides property advisory and transaction coordination services. We are not regulated tax advisors, financial brokers, or legal practitioners. Real estate values can fluctuate and past performance does not guarantee future results. Tax implications depend on individual circumstances and require independent professional advice from a qualified adviser in your jurisdiction. This website is intended for information purposes only and does not constitute a financial promotion, investment advice, or a solicitation to buy or sell any asset. This site is directed at UK residents only. Niron Invest Group operates under the laws of the Republic of Cyprus.
+      </p>
+      <div class="footer__bottom">
+        <span>© 2025 NIRON Invest Group. All rights reserved. · <em>Where capital finds its ground.</em></span>
+        <nav class="footer__links">
+          <a href="https://www.niron-ig.pl/polityka">Privacy Policy</a>
+          <a href="https://www.niron-ig.pl/polityka-cookies">Cookie Policy</a>
+          <a href="mailto:info@niron-ig.com">info@niron-ig.com</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// FAQ toggle
+function toggleFaq(btn) {
+  const item = btn.closest('.faq__item');
+  const answer = item.querySelector('.faq__a');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq__item.open').forEach(el => {
+    el.classList.remove('open');
+    el.querySelector('.faq__a').style.maxHeight = null;
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+// Form submission
+async function submitForm(e, formId) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.form-submit');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  const data = {
+    name: form.querySelector('[name="name"]').value,
+    phone: form.querySelector('[name="phone"]').value,
+    goal: form.querySelector('[name="goal"]').value,
+    budget: form.querySelector('[name="budget"]').value,
+    source: 'niron-ig.com · UK Landing Page',
+    consent: true,
+    email: 'n/a',
+    message: ''
+  };
+
+  try {
+    await fetch('https://hook.eu2.make.com/4jajq1uomn5c8fd5se6xg472ehl4md2b', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+      mode: 'no-cors'
+    });
+  } catch(_) {}
+
+  if (formId === 'main-form') {
+    form.style.display = 'none';
+    document.getElementById('main-success').style.display = 'block';
+  } else {
+    form.reset();
+    btn.textContent = '✓ Request Sent';
+    btn.style.background = '#2a7a50';
+  }
+
+  if (window.dataLayer) window.dataLayer.push({ event: 'uk_landing_form_submit', budget: data.budget, goal: data.goal });
+}
+</script>
+</body>
+</html>
