@@ -84,6 +84,12 @@ img { display: block; max-width: 100%; }
 .hero__trust-label { font-size: 0.68rem; font-weight: 300; color: rgba(255,255,255,0.65); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 0.25rem; }
 
 /* HERO FORM CARD */
+.hero__proof { display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.75rem; }
+.hero__proof-item { display: flex; align-items: center; gap: 0.6rem; }
+.hero__proof-icon { color: var(--amber); font-size: 0.75rem; flex-shrink: 0; opacity: 0.85; }
+.hero__proof-label { font-size: 0.82rem; font-weight: 400; color: rgba(255,255,255,0.85); letter-spacing: 0.02em; }
+.hero__cta-btn { display: inline-block; background: var(--amber); color: #fff; padding: 0.85rem 2rem; font-family: var(--body); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background 0.2s; }
+.hero__cta-btn:hover { background: #b07a20; }
 .hero__card {
   background: rgba(255,255,255,0.97);
   padding: 2.5rem 2rem; border-top: 3px solid var(--amber);
@@ -273,7 +279,7 @@ img { display: block; max-width: 100%; }
       <text x="0" y="52" font-family="Jost, sans-serif" font-size="9" font-weight="500" fill="#01464E" letter-spacing="8">INVEST GROUP</text>
     </svg>
   </a>
-  <a href="#consultation" class="nav__cta">Book a Call</a>
+  <a href="#consultation" class="nav__cta">Book Your 30-Min Call</a>
 </nav>
 
 <!-- HERO -->
@@ -282,28 +288,29 @@ img { display: block; max-width: 100%; }
   <div class="hero__overlay"></div>
   <div class="hero__inner">
     <div class="hero__text">
-      <span class="hero__eyebrow">Cyprus Property &amp; Residency Advisory</span>
-      <h1 class="hero__h1">Your private gateway<br />to <em>Cyprus</em> —<br />with advisors on the ground.</h1>
-      <p class="hero__sub">A focused 30-minute private consultation with on-the-ground advisors living in Cyprus since 2022. Independent buyer representation. No sales pitches.</p>
-      <div class="hero__trust">
-        <div class="hero__trust-item">
-          <div class="hero__trust-num">€68M+</div>
-          <div class="hero__trust-label">Capital Placed</div>
+      <span class="hero__eyebrow">Independent Buyer Advisory · Cyprus Property &amp; Residency</span>
+      <h1 class="hero__h1">You're exploring Cyprus property.<br /><em>Let's determine if it actually<br />aligns with your wealth strategy.</em></h1>
+      <p class="hero__sub">A focused, 30‑minute private consultation with Karolina Lewinska or Sebastian Bruski — on‑the‑ground advisors living in Paphos since 2022, backed by €68M+ in vetted transactions.</p>
+      <div class="hero__proof">
+        <div class="hero__proof-item">
+          <span class="hero__proof-icon">◎</span>
+          <span class="hero__proof-label">Zero Sales Pressure</span>
         </div>
-        <div class="hero__trust-item">
-          <div class="hero__trust-num">270+</div>
-          <div class="hero__trust-label">Transactions</div>
+        <div class="hero__proof-item">
+          <span class="hero__proof-icon">◎</span>
+          <span class="hero__proof-label">International Investment Specialists</span>
         </div>
-        <div class="hero__trust-item">
-          <div class="hero__trust-num">Since&nbsp;2017</div>
-          <div class="hero__trust-label">In Cyprus</div>
+        <div class="hero__proof-item">
+          <span class="hero__proof-icon">◎</span>
+          <span class="hero__proof-label">Independent Legal &amp; Developer Due Diligence</span>
         </div>
       </div>
+      <a href="#consultation" class="hero__cta-btn">Book Your 30-Minute Strategy Call</a>
     </div>
     <div class="hero__form">
       <div class="hero__card">
-        <p class="hero__card-title">Request Your Consultation</p>
-        <p class="hero__card-sub">Strictly confidential. A direct call with an experienced partner in Cyprus.</p>
+        <p class="hero__card-title">Request Your 30-Minute Strategy Call</p>
+        <p class="hero__card-sub">Strictly confidential · No automated robocalls · Direct consultation with an experienced partner in Cyprus.</p>
         <form id="hero-form" onsubmit="submitForm(event,'hero-form')">
           <div class="form-field">
             <label for="h-name">Full Name</label>
@@ -611,7 +618,10 @@ img { display: block; max-width: 100%; }
         Niron Invest Group provides property advisory and transaction coordination services. We are not regulated tax advisors, financial brokers, or legal practitioners. Real estate values can fluctuate and past performance does not guarantee future results. Tax implications depend on individual circumstances and require independent professional advice from a qualified adviser in your jurisdiction. This website is intended for information purposes only and does not constitute a financial promotion, investment advice, or a solicitation to buy or sell any asset. This site is directed at UK residents only. Niron Invest Group operates under the laws of the Republic of Cyprus.
       </p>
       <div class="footer__bottom">
-        <span>© 2025 NIRON Invest Group. All rights reserved.</span>
+        <div>
+        <div style="font-family:var(--heading);font-size:0.95rem;color:rgba(255,255,255,0.5);font-style:italic;margin-bottom:0.4rem;">Where capital finds its ground.</div>
+        <span>© 2025 NIRON Invest Group. All rights reserved. Registered in Cyprus. Niron Invest Group provides property advisory and transaction coordination services. Not regulated by the FCA. Not a financial promotion.</span>
+      </div>
         <nav class="footer__links">
           <a href="https://www.niron-ig.pl/polityka">Privacy Policy</a>
           <a href="https://www.niron-ig.pl/polityka-cookies">Cookie Policy</a>
