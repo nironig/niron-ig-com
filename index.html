@@ -117,6 +117,10 @@ img { display: block; max-width: 100%; }
   cursor: pointer; margin-top: 0.5rem; transition: background 0.2s;
 }
 .form-submit:hover { background: var(--green-dark); }
+.form-consent { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.25rem; }
+.form-consent input[type="checkbox"] { margin-top: 0.2rem; width: 16px; height: 16px; flex-shrink: 0; accent-color: var(--green); cursor: pointer; }
+.form-consent label { font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; cursor: pointer; }
+.form-consent label a { color: var(--green); text-decoration: underline; }
 .form-micro { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.5; }
 
 /* STATS */
@@ -554,8 +558,11 @@ img { display: block; max-width: 100%; }
               <option>£850,000+</option>
             </select>
           </div>
+          <div class="form-consent">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent">I consent to NIRON Invest Group contacting me by phone to arrange the consultation. My data will be processed in accordance with the <a href="./privacy.html" target="_blank">Privacy Policy</a> and will not be shared with third parties.</label>
+          </div>
           <button type="submit" class="form-submit">Schedule My 30-Minute Call →</button>
-          <p class="form-micro">By submitting this form you consent to NIRON Invest Group contacting you by phone. Your details will never be shared with third parties.</p>
         </form>
         <div class="form-success" id="main-success">
           <div class="form-success__icon">✓</div>
