@@ -686,8 +686,7 @@ async function submitForm(e, formId) {
     document.getElementById('main-success').style.display = 'block';
   } else {
     form.reset();
-    btn.textContent = '✓ Request Sent';
-    btn.style.background = '#2a7a50';
+    window.location.href = './thank-you.html';
   }
   if (window.dataLayer) window.dataLayer.push({event:'uk_landing_form_submit', budget:data.budget, goal:data.goal});
 }
