@@ -548,6 +548,10 @@ img { display: block; max-width: 100%; }
             <input type="tel" id="m-phone" name="phone" placeholder="+44 7xxx xxxxxx" required />
           </div>
           <div class="form-field">
+            <label for="m-email">Email Address</label>
+            <input type="email" id="m-email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-field">
             <label for="m-goal">Primary Objective</label>
             <select id="m-goal" name="goal" required>
               <option value="" disabled selected>Select your objective</option>
@@ -688,7 +692,7 @@ async function submitForm(e, formId) {
     goal: form.querySelector('[name="goal"]').value,
     budget: form.querySelector('[name="budget"]').value,
     source: 'niron-ig.com · UK Landing Page',
-    consent: true, email: 'n/a', message: ''
+    consent: true, email: formData.get('email') || '', message: ''
   };
   try {
     await fetch('https://hook.eu2.make.com/4jajq1uomn5c8fd5se6xg472ehl4md2b', {
