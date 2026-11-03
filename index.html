@@ -237,7 +237,8 @@ img { display: block; max-width: 100%; }
 .faq__a-inner { padding: 0 0 1.5rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.8; }
 
 /* FOOTER */
-.footer { background: var(--green-dark); color: rgba(255,255,255,0.7); padding: 3rem 0 2rem; }
+.footer { background: var(--green-dark); color: rgba(255,255,255,0.7); padding: 3rem 0 2rem; position: relative; overflow: hidden; }
+.footer__watermark { position: absolute; right: -80px; bottom: -60px; width: 340px; opacity: 0.08; pointer-events: none; user-select: none; }
 .footer__inner { }
 .footer__logo { font-family: var(--heading); font-size: 1.4rem; font-weight: 400; color: rgba(255,255,255,0.9); letter-spacing: 0.12em; margin-bottom: 1.5rem; }
 .footer__disclaimer { font-size: 0.75rem; line-height: 1.75; max-width: 80ch; margin-bottom: 2rem; color: rgba(255,255,255,0.5); }
@@ -638,6 +639,7 @@ img { display: block; max-width: 100%; }
 
 <!-- FOOTER -->
 <footer class="footer">
+  <img src="./niron-n-watermark.png" alt="" class="footer__watermark" aria-hidden="true" />
   <div class="container">
     <div class="footer__inner">
       <div class="footer__logo">NIRON INVEST GROUP</div>
