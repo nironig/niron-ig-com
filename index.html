@@ -708,7 +708,7 @@ async function submitForm(e, formId) {
   const utm = {};
   ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach((k) => { if (qs.get(k)) utm[k] = qs.get(k); });
   const crm = {
-    formId: 'www-uk',
+    formId: formId === 'main-form' ? 'www-uk-main' : 'www-uk-hero',
     pageUrl: window.location.href,
     fullName: data.name,
     email: data.email,
