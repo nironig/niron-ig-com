@@ -359,6 +359,7 @@ img { display: block; max-width: 100%; }
               <option>Afternoon (12pm – 7pm)</option>
             </select>
           </div>
+          <input type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
           <button type="submit" class="form-submit">Schedule My 30-Minute Call</button>
           <p class="form-micro">Strictly confidential. No automated robocalls. A direct consultation with an experienced partner in Cyprus.</p>
         </form>
@@ -587,6 +588,7 @@ img { display: block; max-width: 100%; }
             <input type="checkbox" id="consent" name="consent" required />
             <label for="consent">I consent to NIRON Invest Group contacting me by phone to arrange the consultation. My data will be processed in accordance with the <a href="./privacy.html" target="_blank">Privacy Policy</a> and will not be shared with third parties.</label>
           </div>
+          <input type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
           <button type="submit" class="form-submit">Schedule My 30-Minute Call →</button>
         </form>
         <div class="form-success" id="main-success">
@@ -692,20 +694,39 @@ async function submitForm(e, formId) {
   const btn = form.querySelector('.form-submit');
   btn.textContent = 'Sending…';
   btn.disabled = true;
+  const val = (n) => (form.querySelector('[name="' + n + '"]') || {}).value || '';
   const data = {
-    name: form.querySelector('[name="name"]').value,
-    phone: form.querySelector('[name="phone"]').value,
-    goal: form.querySelector('[name="goal"]').value,
-    budget: form.querySelector('[name="budget"]').value,
+    name: val('name'),
+    phone: val('phone'),
+    goal: val('goal'),
+    budget: val('budget'),
     source: 'niron-ig.com · UK Landing Page',
-    consent: true, email: formData.get('email') || '', message: ''
+    consent: true, email: val('email'), message: ''
   };
-  try {
-    await fetch('https://hook.eu2.make.com/4jajq1uomn5c8fd5se6xg472ehl4md2b', {
+  // Copy to Niron CRM (lead + English welcome email), sent alongside Make.
+  const qs = new URLSearchParams(window.location.search);
+  const utm = {};
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach((k) => { if (qs.get(k)) utm[k] = qs.get(k); });
+  const crm = {
+    formId: 'www-uk',
+    pageUrl: window.location.href,
+    fullName: data.name,
+    email: data.email,
+    phone: data.phone,
+    utm: utm,
+    hp: val('hp'),
+    fields: { 'Primary objective': data.goal, 'Budget': data.budget, 'Preferred call time (UK)': val('preferred_time') }
+  };
+  await Promise.allSettled([
+    fetch('https://hook.eu2.make.com/4jajq1uomn5c8fd5se6xg472ehl4md2b', {
       method: 'POST', headers: {'Content-Type':'application/json'},
       body: JSON.stringify(data), mode: 'no-cors'
-    });
-  } catch(_) {}
+    }),
+    fetch('https://crm.niron-ig.com/api/leads/www/public', {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(crm)
+    })
+  ]);
   if (formId === 'main-form') {
     form.style.display = 'none';
     document.getElementById('main-success').style.display = 'block';
