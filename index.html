@@ -38,8 +38,9 @@ img { display: block; max-width: 100%; }
   background: rgba(255,255,255,0.96);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(1,70,78,0.1);
+  overflow: visible;
 }
-.nav__logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+.nav__logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; overflow: visible; }
 .nav__logo svg { height: 36px; width: auto; }
 .nav__cta {
   background: var(--green); color: #fff;
@@ -284,7 +285,7 @@ img { display: block; max-width: 100%; }
 <!-- NAV -->
 <nav class="nav">
   <a class="nav__logo" href="#">
-    <img src="./niron-logo-green.png" alt="NIRON Invest Group" style="height:76px;width:auto;display:block;" />
+    <img src="./niron-logo-green.png" alt="NIRON Invest Group" style="height:110px;width:auto;display:block;" />
   </a>
   <a href="#consultation" class="nav__cta">Book Your 30-Min Call</a>
 </nav>
